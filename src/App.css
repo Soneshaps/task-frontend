@@ -1,0 +1,13 @@
+body {
+  background-color: #17181f;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+}

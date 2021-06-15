@@ -1,0 +1,7 @@
+.message-box-wrapper {
+  height: 40px;
+  width: 400px;
+  background-color: #20212c;
+  border-radius: 10px;
+  margin: 0 auto;
+}
