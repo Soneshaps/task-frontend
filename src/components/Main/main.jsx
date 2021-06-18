@@ -8,11 +8,11 @@ import Register from "../Register/register";
 const Main = () => {
   return (
     <Router>
+      <Route path="/dashboard" component={Dashboard} />
+
       <Route exact path="/" component={Direct} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-
-      <Route path="/dashboard" component={Dashboard} />
     </Router>
   );
 };

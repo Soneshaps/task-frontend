@@ -1,0 +1,82 @@
+.all-task-wrapper {
+  color: #b8b8bb;
+}
+.all-task-list-wrapper {
+  margin-bottom: 30px;
+}
+
+.all-task-header {
+  margin: 0 0 60px 0;
+  padding-top: 30px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #fbfbfb;
+}
+
+.all-task-list-title {
+  height: 50px;
+  position: relative;
+}
+
+.completed {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.all-task-list-description {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #21212b;
+  padding: 20px 20px 20px 50px;
+}
+
+.all-task-list-header {
+  background-color: #272732;
+  display: flex;
+  justify-content: space-between;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  line-height: 50px;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+.all-task-list-option button {
+  height: 29px;
+  width: 29px;
+  border-radius: 9px;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.all-task-list-option button svg {
+  height: 16px;
+  width: 16px;
+  color: #272732;
+}
+
+.task-main {
+  max-height: 450px;
+  overflow-y: scroll;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #181820;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

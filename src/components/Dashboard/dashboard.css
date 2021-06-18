@@ -1,0 +1,35 @@
+.dashoboard-bottom-section {
+  display: flex;
+  color: #fff;
+}
+
+.dashboard-greeting {
+  font-size: 54px;
+  font-weight: 700;
+}
+
+.dashboard-username {
+  margin: 10px 0 60px 0;
+  font-size: 72px;
+  font-weight: 400;
+}
+
+.dashboard-task {
+  display: flex;
+}
+
+.dash-board-total-task {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.dashboard-total-task-number {
+  background-color: #fff;
+  padding: 0 10px;
+  color: #20212c;
+  font-weight: 700;
+  line-height: 22px;
+  font-size: 17px;
+  border-radius: 9px;
+}

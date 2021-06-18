@@ -1,0 +1,51 @@
+.left-nav {
+  width: 250px;
+  height: 92vh;
+  background-color: #21212b;
+}
+
+.left-nav-items {
+  color: #ababaf;
+  height: 50px;
+  font-size: 14px;
+  line-height: 50px;
+  padding-left: 20px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left-nav-items:hover {
+  background-color: #272732;
+}
+
+.nav-icon {
+  height: 29px;
+  width: 29px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.nav-icon svg {
+  color: #ffffff;
+}
+
+.icon-add {
+  background-color: #ae68e6;
+}
+
+.icon-add svg {
+  background-color: #ae68e6;
+  height: 20px;
+  width: 20px;
+}
+
+.icon-book {
+  background-color: #fc739f;
+}

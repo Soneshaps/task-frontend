@@ -41,8 +41,8 @@
 .login-main button {
   margin-top: 10px;
   height: 45px;
-  background-image: linear-gradient(to bottom right, #ff9f7b, #fd7c9b, #c142d9);
-  border: none;
+  border: 1px solid #ffffff;
+  background-color: transparent;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
@@ -51,7 +51,11 @@
   font-family: "Inter", sans-serif;
   cursor: pointer;
 }
-
+.login-main button:hover {
+  background-color: #fff;
+  color: #30313d;
+  border: none;
+}
 .submit-div {
   width: 100%;
   position: relative;

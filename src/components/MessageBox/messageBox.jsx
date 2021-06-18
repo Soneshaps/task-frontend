@@ -1,9 +1,9 @@
 import React from "react";
 import "./messageBox.css";
-const MessageBox = () => {
+const MessageBox = (props) => {
   return (
     <div className="message-box-wrapper">
-      <div className="message-box-main">USER SUCESSFULLY CREATED</div>
+      <div className="message-box-main">{props.message}</div>
     </div>
   );
 };

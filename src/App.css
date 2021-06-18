@@ -3,11 +3,14 @@ body {
 }
 
 .App {
-  display: flex;
   align-items: center;
   height: 100vh;
 }
 
 .wrapper {
   width: 100%;
+}
+
+a {
+  text-decoration: none;
 }

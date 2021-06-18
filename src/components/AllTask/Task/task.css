@@ -1,0 +1,57 @@
+.all-task-list-title-items {
+  display: flex;
+  align-items: center;
+}
+.all-task-list-title {
+  margin-left: 5px;
+}
+input[type="checkbox"] {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  color: #363839;
+  border: 2px solid #06842c;
+  border-radius: 9px;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+
+input[type="checkbox"]::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 2px;
+  left: 8px;
+  width: 5px;
+  height: 13px;
+  border-style: solid;
+  border-color: #272732;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+input[type="checkbox"]:checked {
+  color: #fff;
+  border-color: #06842c;
+  background: #06842c;
+}
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
+
+.task-delete-button {
+  background-color: rgb(209, 26, 42);
+}
+.task-delete-button:hover {
+  background-color: rgba(209, 26, 42, 0.7);
+}
+
+.task-edit-button {
+  background-color: rgb(218, 114, 60);
+}
+
+.task-edit-button:hover {
+  background-color: rgba(218, 114, 60, 0.7);
+}

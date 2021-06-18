@@ -1,18 +1,24 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-
+import TopHeader from "../TopHeader/topHeader";
+import LeftNav from "../LeftNav/leftNav";
+import { loadData } from "../../actions/userActions";
+import { useDispatch } from "react-redux";
+import Content from "../Content/content";
+import "./dashboard.css";
+import { useEffect } from "react";
 const Dashboard = () => {
-  const logout = () => {
-    window.localStorage.removeItem("token");
-    window.location.reload(true);
-  };
-  if (window.localStorage.getItem("token") === null) {
-    return <Redirect to="/" />;
-  }
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadData());
+  }, []);
+
   return (
     <div>
-      Dashboard
-      <button onClick={logout}>LOGOUT</button>
+      <TopHeader />
+      <div className="dashoboard-bottom-section">
+        <LeftNav />
+        <Content />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,31 @@
+.logout {
+  background-color: #111116;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logout-button {
+  color: #ffffff;
+  height: 30px;
+  font-weight: 700;
+  padding: 0 14px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(228, 61, 64);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button:hover {
+  background-color: rgba(228, 61, 64, 0.7);
+}
+
+.logout-button svg {
+  height: 20px;
+  width: 20px;
+}

@@ -1,0 +1,25 @@
+.edit-task-wrapper {
+  height: 92vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.edit-task-main {
+  width: 600px;
+  background-color: #20212c;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.cancel-task-button-wrapper {
+  border: none;
+}
+
+.add-task-button:hover {
+  background-color: red;
+}

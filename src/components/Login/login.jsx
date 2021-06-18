@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Redirect, Link } from "react-router-dom";
-
+import { useHistory } from "react-router";
+import { useDispatch } from "react-redux";
 import "./login.css";
+import { userAuth } from "../../actions/authAction";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const dispatch = useDispatch();
+  const routerHistory = useHistory();
   const handleEmail = (emailValue) => {
     setEmail(emailValue);
   };
@@ -14,35 +17,22 @@ const Login = () => {
     setPassword(passwordValue);
   };
 
-  const handleLogin = () => {
-    console.log(email, password);
-    fetch("http://localhost:4000/api/users/login", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.token) {
-          console.log(res);
-          window.localStorage.setItem("token", res.token);
-          window.location.reload(true);
-        } else {
-          alert("Wrong password or email ");
-        }
-      })
-      .catch(() => {
-        alert("Somethings not right");
-      });
+  const handleLogin = async () => {
+    const userData = {
+      email,
+      password,
+    };
+
+    await dispatch(userAuth(userData));
+    routerHistory.push("/dashboard");
   };
 
+  const direct = () => {
+    if (window.localStorage.getItem("token")) {
+      return <Redirect to="/dashboard" />;
+    }
+  };
   if (window.localStorage.getItem("token")) {
-    console.log("here");
     return <Redirect to="/dashboard" />;
   }
   return (

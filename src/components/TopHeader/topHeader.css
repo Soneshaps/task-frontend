@@ -1,0 +1,19 @@
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111116;
+  padding: 0 20px;
+  color: #ffffff;
+  align-items: center;
+}
+
+.top-header a {
+  color: #ffffff;
+}
+
+.top-header-link {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 700;
+}

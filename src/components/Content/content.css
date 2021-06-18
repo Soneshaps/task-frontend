@@ -1,0 +1,13 @@
+.content-wrapper {
+  width: 100%;
+  /* background-color: red; */
+  margin: 0 auto;
+  position: relative;
+}
+
+.content-main {
+  width: 700px;
+  /* background-color: red; */
+  margin: 0 auto;
+  position: relative;
+}
