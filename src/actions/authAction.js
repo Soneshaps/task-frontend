@@ -1,6 +1,6 @@
 import axios from "axios";
 import { showMessage, hideMessage } from "./messageAction";
-import { loggedInMessage } from "../utils/messages";
+import { incorrectFeild, loggedInMessage } from "../utils/messages";
 export const setAuth = (data) => {
   return { type: "SET_AUTH", payload: data };
 };
@@ -24,5 +24,10 @@ export const userAuth = (userData) => async (dispatch) => {
     setTimeout(function () {
       dispatch(hideMessage());
     }, 2000);
-  } catch (err) {}
+  } catch (err) {
+    dispatch(showMessage(incorrectFeild));
+    setTimeout(function () {
+      dispatch(hideMessage());
+    }, 2000);
+  }
 };

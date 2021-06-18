@@ -5,9 +5,10 @@
   margin: 0 auto;
   position: absolute;
   right: 0;
-  top: 30px;
+  top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
+  color: #ffffff;
 }

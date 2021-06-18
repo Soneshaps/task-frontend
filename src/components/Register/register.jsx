@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
-import MessageBox from "../MessageBox/messageBox";
+import { useDispatch } from "react-redux";
+import { hideMessage, showMessage } from "../../actions/messageAction";
+import {
+  invalidFeildMessage,
+  incorrectEmailMessage,
+  accountCreatedMessage,
+  emailExistMessage,
+  errorMessage,
+} from "../../utils/messages";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [alert, setAlert] = useState(false);
-  const [color, setColor] = useState("");
+  const dispatch = useDispatch();
 
   const handleName = (NameValue) => {
     setName(NameValue);
@@ -22,16 +28,20 @@ const Register = () => {
     setPassword(passwordValue);
   };
 
+  const hide = () => {
+    setTimeout(function () {
+      dispatch(hideMessage());
+    }, 2000);
+  };
+
   const validateInput = () => {
     let isEmail = validateEmail(email);
     if (name === "" || email === "" || password === "") {
-      setMessage("Fill all the Feild");
-      setAlert(true);
-      setColor("color-yellow");
+      dispatch(showMessage(invalidFeildMessage));
+      hide();
     } else if (!isEmail) {
-      setMessage("Email is not correct");
-      setAlert(true);
-      setColor("color-yellow");
+      dispatch(showMessage(incorrectEmailMessage));
+      hide();
     } else {
       handleRegister();
     }
@@ -48,22 +58,22 @@ const Register = () => {
     axios
       .post("http://localhost:4000/api/users/register", body)
       .then((res) => {
-        console.log(res);
-        setMessage(res.data);
-        setAlert(true);
         if (res.data === "User Sucessfully Created") {
-          setColor("color-green");
-          document.getElementById("registerForm").reset();
+          dispatch(showMessage(accountCreatedMessage));
+          hide();
         }
         if (res.data === "Email Already Exist") {
-          setColor("color-red");
+          dispatch(showMessage(emailExistMessage));
+          hide();
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        dispatch(showMessage(errorMessage));
+        hide();
+      });
   };
 
   if (window.localStorage.getItem("token")) {
-    console.log("here");
     return <Redirect to="/dashboard" />;
   }
   return (

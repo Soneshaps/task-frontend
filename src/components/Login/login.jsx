@@ -4,6 +4,8 @@ import { useHistory } from "react-router";
 import { useDispatch } from "react-redux";
 import "./login.css";
 import { userAuth } from "../../actions/authAction";
+import { showMessage, hideMessage } from "../../actions/messageAction";
+import { invalidFeildMessage } from "../../utils/messages";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +17,20 @@ const Login = () => {
 
   const handlePassword = (passwordValue) => {
     setPassword(passwordValue);
+  };
+  const hide = () => {
+    setTimeout(function () {
+      dispatch(hideMessage());
+    }, 2000);
+  };
+
+  const validateLogin = () => {
+    if (email === "" || password === "") {
+      dispatch(showMessage(invalidFeildMessage));
+      hide();
+    } else {
+      handleLogin();
+    }
   };
 
   const handleLogin = async () => {
@@ -51,7 +67,7 @@ const Login = () => {
           placeholder="Password"
           onChange={(e) => handlePassword(e.target.value)}
         />
-        <button onClick={handleLogin}>LOGIN</button>
+        <button onClick={validateLogin}>LOGIN</button>
         <div className="next-form">
           Don't have an acoount ? <Link to="/register">Register</Link>
         </div>

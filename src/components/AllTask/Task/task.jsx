@@ -59,7 +59,6 @@ const Task = (props) => {
         <div className="all-task-list-option">
           {props.task?.status === "pending" ? (
             <button
-              disabled
               className="task-edit-button"
               onClick={() => {
                 editTaskHandler();

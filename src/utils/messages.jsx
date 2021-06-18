@@ -32,3 +32,28 @@ export const deletedMessage = {
   isMessage: true,
   message: "Task Deleted !",
 };
+
+export const invalidFeildMessage = {
+  isMessage: true,
+  message: "Please Enter All Feild",
+};
+
+export const incorrectFeild = {
+  isMessage: true,
+  message: "Username Password Incorrect",
+};
+
+export const incorrectEmailMessage = {
+  isMessage: true,
+  message: "Please use correct Email ",
+};
+
+export const accountCreatedMessage = {
+  isMessage: true,
+  message: "Account Sucessfully Created",
+};
+
+export const emailExistMessage = {
+  isMessage: true,
+  message: "Username and Email Already Exist",
+};
